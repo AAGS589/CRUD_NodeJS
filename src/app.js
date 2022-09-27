@@ -17,9 +17,9 @@ app.set('views', path.join(__dirname, 'views'));
 // middlewares
 app.use(morgan('dev'));
 app.use(myConnection(mysql, {
-    host: 'localhost',
-    user: 'root',
-    password: '1234',
+    host: '3.90.161.76',
+    user: 'ubuntu',
+    password: 'password',
     port: 3306,
     database: 'crudnodejs'
 }, 'single' ))
@@ -32,5 +32,5 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // starting the server
 app.listen(app.get('port'), () =>{
-    console.log('server on port 3000');
+    console.log('servicio lanzado en: http://localhost:3000/');
 });
