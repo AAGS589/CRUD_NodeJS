@@ -3,6 +3,7 @@ const path = require('path');
 const morgan = require('morgan');
 const mysql = require('mysql');
 const myConnection = require('express-myconnection');
+const cors = require('cors')
 
 const app = express();
 
@@ -23,6 +24,7 @@ app.use(myConnection(mysql, {
     database: 'crudnodejs'
 }, 'single' ))
 app.use(express.urlencoded({extended: false}))
+app.use(cors())
 // routes
 app.get('/', (req, res)=>{
     res.send('Welcome to my API')
