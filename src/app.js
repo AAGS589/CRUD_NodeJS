@@ -17,7 +17,7 @@ app.set('port', process.env.PORT || 3000);
 // middlewares
 app.use(morgan('dev'));
 app.use(myConnection(mysql, {
-    host: '100.25.213.248',
+    host: '54.152.26.183',
     user: 'ubuntu',
     password: 'password',
     port: 3306,
