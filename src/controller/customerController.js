@@ -9,9 +9,7 @@ controller.list = (req,res) => {
                 res.json(err);
             }
             
-            res.render('customers', {
-                data: customers
-            });
+            res.json(customers)
         });
     });
 };

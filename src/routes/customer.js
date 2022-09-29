@@ -3,7 +3,7 @@ const router = express.Router();
 
 const customerController = require ('../controller/customerController')
 
-router.get('/', customerController.list);
+router.get('/getAll', customerController.list);
 router.post('/add', customerController.save);
 router.get('/delete/:id', customerController.delete);
 

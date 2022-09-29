@@ -11,20 +11,23 @@ const customerRoutes = require('./routes/customer');
 
 // setting
 app.set('port', process.env.PORT || 3000);
-app.set('view engine', 'ejs');
-app.set('views', path.join(__dirname, 'views'));
+
 
 // middlewares
 app.use(morgan('dev'));
 app.use(myConnection(mysql, {
-    host: 'localhost',
-    user: 'root',
-    password: '1234',
+    host: '100.25.213.248',
+    user: 'ubuntu',
+    password: 'password',
     port: 3306,
     database: 'crudnodejs'
 }, 'single' ))
 app.use(express.urlencoded({extended: false}))
 // routes
+app.get('/', (req, res)=>{
+    res.send('Welcome to my API')
+})
+
 app.use('/', customerRoutes);
 
 // statics files
